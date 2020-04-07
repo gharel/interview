@@ -1,20 +1,20 @@
-import React, {Component, Fragment} from 'react';
-import Drawer from '@atlaskit/drawer';
-import {DropdownItem, DropdownItemGroup} from '@atlaskit/dropdown-menu';
-import CreateIcon from '@atlaskit/icon/glyph/add';
-import SearchIcon from '@atlaskit/icon/glyph/search';
-import HelpIcon from '@atlaskit/icon/glyph/question-circle';
-import MenuIcon from '@atlaskit/icon/glyph/menu';
-import Modal, {ModalTransition} from '@atlaskit/modal-dialog';
-import {GlobalItem, GlobalNav} from '@atlaskit/navigation-next';
+import React, { Component, Fragment } from "react";
+import Drawer from "@atlaskit/drawer";
+import { DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
+import CreateIcon from "@atlaskit/icon/glyph/add";
+import SearchIcon from "@atlaskit/icon/glyph/search";
+import HelpIcon from "@atlaskit/icon/glyph/question-circle";
+import MenuIcon from "@atlaskit/icon/glyph/menu";
+import Modal, { ModalTransition } from "@atlaskit/modal-dialog";
+import { GlobalItem, GlobalNav } from "@atlaskit/navigation-next";
 
-const ItemComponent = ({dropdownItems: DropdownItems, ...itemProps}) => {
+const ItemComponent = ({ dropdownItems: DropdownItems, ...itemProps }) => {
 	return <GlobalItem {...itemProps} />;
 };
 
 const dropdownApp = () => (
 	<DropdownItemGroup title="Heading">
-		<DropdownItem onClick={() => console.log('Dropdown item clicked')}>
+		<DropdownItem onClick={() => console.log("Dropdown item clicked")}>
 			Dropdown item with onClick
 		</DropdownItem>
 		<DropdownItem href="//atlassian.com" target="_new">
@@ -29,49 +29,51 @@ class GlobalNavigationApp extends Component {
 		isDrawerOpen: false,
 	};
 
-	openModal = () => this.setState({isModalOpen: true});
+	openModal = () => this.setState({ isModalOpen: true });
 
-	closeModal = () => this.setState({isModalOpen: false});
+	closeModal = () => this.setState({ isModalOpen: false });
 
-	openDrawer = () => this.setState({isDrawerOpen: true});
+	openDrawer = () => this.setState({ isDrawerOpen: true });
 
-	closeDrawer = () => this.setState({isDrawerOpen: false});
+	closeDrawer = () => this.setState({ isDrawerOpen: false });
 
 	render() {
-		const {isModalOpen, isDrawerOpen} = this.state;
+		const { isModalOpen, isDrawerOpen } = this.state;
 		return (
 			<Fragment>
 				<GlobalNav
 					itemComponent={ItemComponent}
 					primaryItems={[
-						{icon: MenuIcon, id: 'Menu', tooltip: 'Menu'},
+						{ icon: MenuIcon, id: "Menu", tooltip: "Menu" },
 						{
 							icon: CreateIcon,
-							id: 'create',
-							tooltip: 'Open a modal',
-							onClick: this.openModal
+							id: "create",
+							tooltip: "Open a modal",
+							onClick: this.openModal,
 						},
 						{
 							icon: SearchIcon,
-							id: 'search',
-							tooltip: 'Open a drawer',
-							onClick: this.openDrawer
-						}
+							id: "search",
+							tooltip: "Open a drawer",
+							onClick: this.openDrawer,
+						},
 					]}
 					secondaryItems={[
 						{
 							dropdownItems: dropdownApp,
 							icon: HelpIcon,
-							id: 'help',
-							tooltip: 'Open dropdown'
-						}
+							id: "help",
+							tooltip: "Open dropdown",
+						},
 					]}
 				/>
 
 				<ModalTransition>
 					{isModalOpen && (
 						<Modal
-							actions={[{text: 'Close', onClick: this.closeModal}]}
+							actions={[
+								{ text: "Close", onClick: this.closeModal },
+							]}
 							onClose={this.closeModal}
 							heading="Modal title"
 						>
@@ -80,7 +82,11 @@ class GlobalNavigationApp extends Component {
 					)}
 				</ModalTransition>
 
-				<Drawer onClose={this.closeDrawer} isOpen={isDrawerOpen} width="narrow">
+				<Drawer
+					onClose={this.closeDrawer}
+					isOpen={isDrawerOpen}
+					width="narrow"
+				>
 					Drawer content
 				</Drawer>
 			</Fragment>
@@ -88,4 +94,6 @@ class GlobalNavigationApp extends Component {
 	}
 }
 
-export default () => <GlobalNavigationApp />;
+export default () => {
+	<GlobalNavigationApp />;
+};

@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components'
-import {AtlaskitThemeProvider} from '@atlaskit/theme';
+import React from "react";
+import styled from "styled-components";
+import { AtlaskitThemeProvider } from "@atlaskit/theme";
 
 import Header from "./Header";
 
@@ -10,16 +10,15 @@ const Page = styled.div`
 	min-height: 100vh;
 `;
 
-const Layout = props => {
+const Layout = (props) => {
 	return (
 		<AtlaskitThemeProvider mode="dark">
 			<Page>
-				<Header/>
+				<Header />
 				{props.children}
 			</Page>
 		</AtlaskitThemeProvider>
 	);
 };
-
 
 export default Layout;
