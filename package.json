@@ -5,6 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "ts-node --project tsconfig.server.json src/server/index.ts",
+		"lint:fix": "eslint --ext .jsx,.js src/** --fix",
+		"lint": "eslint --ext .jsx,.js src/**",
+		"prettify": "prettier \"src/**/*.(ts|tsx|js|jsx|html|css)\" --write",
 		"build:server": "tsc --project tsconfig.server.json",
 		"build:next": "next build",
 		"build": "npm run build:next && npm run build:server",
@@ -45,8 +48,28 @@
 		"@types/node": "^13.11.0",
 		"@types/react": "^16.9.32",
 		"babel-plugin-styled-components": "^1.10.7",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb-typescript-prettier": "^2.1.1",
+		"husky": "^4.2.3",
+		"lint-staged": "^10.1.2",
+		"prettier": "^2.0.4",
 		"styled-components": "^5.0.1",
 		"ts-node": "^8.8.2",
 		"typescript": "^3.8.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"./src/*.(ts|tsx|js|jsx|html|css)": [
+			"prettier --write",
+			"git add"
+		],
+		"./src/*.(js|jsx)": [
+			"npm run lint:fix",
+			"npm run lint"
+		]
 	}
 }
