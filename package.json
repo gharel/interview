@@ -12,7 +12,7 @@
 		"build:next": "next build",
 		"build": "npm run build:next && npm run build:server",
 		"start": "set NODE_ENV=production && node dist/index.js",
-		"utils:commit": "npx git-cz",
+		"utils:commit": "git-cz",
 		"utils:check": "npx npm-check --skip-unused"
 	},
 	"repository": {
@@ -47,12 +47,15 @@
 		"styled-components": "^5.1.0"
 	},
 	"devDependencies": {
+		"@commitlint/config-conventional": "^8.3.4",
 		"@types/express": "^4.17.4",
 		"@types/node": "^13.11.0",
 		"@types/react": "^16.9.32",
 		"babel-plugin-styled-components": "^1.10.7",
+		"commitlint": "^8.3.5",
 		"eslint": "^6.8.0",
 		"eslint-config-airbnb-typescript-prettier": "^2.1.1",
+		"git-cz": "^4.3.1",
 		"husky": "^4.2.3",
 		"lint-staged": "^10.1.2",
 		"prettier": "^2.0.4",
@@ -62,7 +65,6 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
-			"prepare-commit-msg": "npm run utils:commit",
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 		}
 	},
