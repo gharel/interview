@@ -1,5 +1,10 @@
 # Interview project
 
+## Technologies
+- React
+- Next.js
+- Express
+
 Code :
 - [ ] Debug tooltip in navigation-next (work with styled-components 3.X)
 - [ ] Debug dropdown width navigation-next
