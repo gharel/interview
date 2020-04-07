@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Drawer from "@atlaskit/drawer";
 import { DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
 import CreateIcon from "@atlaskit/icon/glyph/add";
@@ -8,7 +8,7 @@ import MenuIcon from "@atlaskit/icon/glyph/menu";
 import Modal, { ModalTransition } from "@atlaskit/modal-dialog";
 import { GlobalItem, GlobalNav } from "@atlaskit/navigation-next";
 
-const ItemComponent = ({ dropdownItems: DropdownItems, ...itemProps }) => {
+const ItemComponent = ({ ...itemProps }) => {
 	return <GlobalItem {...itemProps} />;
 };
 
@@ -40,7 +40,7 @@ class GlobalNavigationApp extends Component {
 	render() {
 		const { isModalOpen, isDrawerOpen } = this.state;
 		return (
-			<Fragment>
+			<div>
 				<GlobalNav
 					itemComponent={ItemComponent}
 					primaryItems={[
@@ -89,11 +89,9 @@ class GlobalNavigationApp extends Component {
 				>
 					Drawer content
 				</Drawer>
-			</Fragment>
+			</div>
 		);
 	}
 }
 
-export default () => {
-	<GlobalNavigationApp />;
-};
+export default () => <GlobalNavigationApp />;

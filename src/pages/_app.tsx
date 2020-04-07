@@ -1,8 +1,9 @@
-import '@atlaskit/css-reset';
+import React from "react";
+import "@atlaskit/css-reset";
 // import App from 'next/app'
 
 function App({ Component, pageProps }) {
-	return <Component {...pageProps} />
+	return <Component {...pageProps} />;
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -17,4 +18,4 @@ function App({ Component, pageProps }) {
 //   return { ...appProps }
 // }
 
-export default App
+export default App;

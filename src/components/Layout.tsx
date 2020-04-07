@@ -11,11 +11,12 @@ const Page = styled.div`
 `;
 
 const Layout = (props) => {
+	const { children } = props;
 	return (
 		<AtlaskitThemeProvider mode="dark">
 			<Page>
 				<Header />
-				{props.children}
+				{children}
 			</Page>
 		</AtlaskitThemeProvider>
 	);
