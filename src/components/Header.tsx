@@ -88,6 +88,4 @@ class GlobalNavigationApp extends Component {
 	}
 }
 
-export default () => (
-	<GlobalNavigationApp/>
-);
+export default () => <GlobalNavigationApp />;
