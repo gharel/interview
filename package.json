@@ -63,11 +63,11 @@
 		}
 	},
 	"lint-staged": {
-		"./src/*.(ts|tsx|js|jsx|html|css)": [
+		"./src/**/*.(ts|tsx|js|jsx|html|css)": [
 			"prettier --write",
 			"git add"
 		],
-		"./src/*.(js|jsx)": [
+		"./src/**/*.(js|jsx)": [
 			"npm run lint:fix",
 			"npm run lint"
 		]
