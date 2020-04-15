@@ -1,5 +1,4 @@
 import React from "react";
-import "@atlaskit/css-reset";
 // import App from 'next/app'
 
 function App({ Component, pageProps }) {

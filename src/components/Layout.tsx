@@ -1,24 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import { AtlaskitThemeProvider } from "@atlaskit/theme";
+import { Reset } from "styled-reset";
 
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Page = styled.div`
-	display: flex;
-	flex-direction: row;
+	background: #111;
+	color: #ccc;
+	font-family: sans-serif;
+	display: grid;
+	grid-template-rows: 100px 1fr 100px;
 	min-height: 100vh;
 `;
 
 const Layout = (props) => {
 	const { children } = props;
 	return (
-		<AtlaskitThemeProvider mode="dark">
-			<Page>
-				<Header />
-				{children}
-			</Page>
-		</AtlaskitThemeProvider>
+		<Page>
+			<Reset />
+			<Header />
+			{children}
+			<Footer />
+		</Page>
 	);
 };
 
