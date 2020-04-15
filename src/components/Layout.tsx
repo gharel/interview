@@ -10,7 +10,7 @@ const Page = styled.div`
 	color: #ccc;
 	font-family: sans-serif;
 	display: grid;
-	grid-template-rows: 100px 1fr 100px;
+	grid-template-rows: max-content 1fr max-content;
 	min-height: 100vh;
 `;
 
