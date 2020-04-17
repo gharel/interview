@@ -55,11 +55,7 @@ const shouldCompress = (req, res) => {
 			const env = process.env.NODE_ENV.trim();
 			// eslint-disable-next-line no-console
 			console.log(
-				`> ` +
-					`\x1b[32m` +
-					`Ready:` +
-					`\x1b[0m` +
-					` https://localhost:${port} (env: ${env})`
+				`> \x1b[32mReady:\x1b[0m https://localhost:${port} (env: ${env})`
 			);
 		});
 	} catch (e) {
