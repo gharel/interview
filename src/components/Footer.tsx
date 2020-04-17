@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import THEME from "./Theme";
+import THEME from "../theme/Theme";
 
 const Footer = styled.footer`
 	background: ${THEME.colors.black};

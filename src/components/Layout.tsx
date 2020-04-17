@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Reset } from "styled-reset";
-import THEME from "./Theme";
+import THEME from "../theme/Theme";
 
 import Header from "./Header";
 import Footer from "./Footer";
