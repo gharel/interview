@@ -114,5 +114,5 @@ dist
 .idea
 
 # Certificate
-server/ssl.certificate.crt
-server/ssl.private.key
+src/server/ssl.certificate.crt
+src/server/ssl.private.key
