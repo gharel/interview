@@ -112,3 +112,7 @@ dist
 
 # PHPStrom
 .idea
+
+# Certificate
+server/ssl.certificate.crt
+server/ssl.private.key
