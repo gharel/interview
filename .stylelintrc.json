@@ -13,9 +13,13 @@
 		"declaration-no-important": true,
 		"font-family-name-quotes": "always-where-recommended",
 		"font-weight-notation": [
-			"numeric", {
-				"ignore": ["relative"]
-			}],
+			"numeric",
+			{
+				"ignore": [
+					"relative"
+				]
+			}
+		],
 		"function-url-quotes": "always",
 		"indentation": "tab",
 		"length-zero-no-unit": true,

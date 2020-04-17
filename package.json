@@ -7,13 +7,13 @@
 		"utils:check": "npx npm-check --skip-unused",
 		"utils:commit": "git cz",
 		"dev": "ts-node --project tsconfig.server.json src/server/index.ts",
-		"prettify": "prettier \"src/**/*.(ts|tsx|js|jsx|html|scss|css)\" --write",
+		"prettify": "prettier \"src/**/*.(ts|tsx|js|jsx|html|css)\" --write",
 		"lint": "npm run lint:css & npm run lint:js",
 		"lint:fix": "npm run lint:css:fix & npm run lint:js:fix",
 		"lint:js:fix": "eslint --ext .ts,.tsx,.js,.jsx src/** --fix",
 		"lint:js": "eslint --ext .ts,.tsx,.js,.jsx src/**",
-		"lint:css:fix": "stylelint \"src/**/*.{ts,tsx,js,jsx,scss,css}\" --fix",
-		"lint:css": "stylelint \"src/**/*.{ts,tsx,js,jsx,scss,css}\"",
+		"lint:css:fix": "stylelint \"src/**/*.{ts,tsx,js,jsx,css}\" --fix",
+		"lint:css": "stylelint \"src/**/*.{ts,tsx,js,jsx,css}\"",
 		"build:server": "tsc --project tsconfig.server.json",
 		"build:next": "next build",
 		"build": "npm run build:next && npm run build:server",
@@ -75,14 +75,14 @@
 		}
 	},
 	"lint-staged": {
-		"./src/**/*.(ts|tsx|js|jsx|html|scss|css)": [
+		"./src/**/*.(ts|tsx|js|jsx|html|css)": [
 			"prettier --write"
 		],
 		"./src/**/*.(ts|tsx|js|jsx)": [
 			"npm run lint:js:fix",
 			"npm run lint:js"
 		],
-		"./src/**/*.(ts|tsx|js|jsx|scss|css)": [
+		"./src/**/*.(ts|tsx|js|jsx|css)": [
 			"npm run lint:css:fix",
 			"npm run lint:css"
 		]
