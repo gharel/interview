@@ -12,8 +12,8 @@
 		"lint:fix": "npm run lint:css:fix & npm run lint:js:fix",
 		"lint:js:fix": "eslint --ext .ts,.tsx,.js,.jsx src/** --fix",
 		"lint:js": "eslint --ext .ts,.tsx,.js,.jsx src/**",
-		"lint:css:fix": "stylelint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
-		"lint:css": "stylelint \"src/**/*.{ts,tsx,js,jsx}\"",
+		"lint:css:fix": "stylelint \"src/**/*.{ts,tsx,js,jsx,scss,css}\" --fix",
+		"lint:css": "stylelint \"src/**/*.{ts,tsx,js,jsx,scss,css}\"",
 		"build:server": "tsc --project tsconfig.server.json",
 		"build:next": "next build",
 		"build": "npm run build:next && npm run build:server",
@@ -70,13 +70,13 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"post-commit": "git update-index --again"
 		}
 	},
 	"lint-staged": {
 		"./src/**/*.(ts|tsx|js|jsx|html|scss|css)": [
-			"prettier --write",
-			"git add"
+			"prettier --write"
 		],
 		"./src/**/*.(ts|tsx|js|jsx)": [
 			"npm run lint:js:fix",
