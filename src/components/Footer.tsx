@@ -5,4 +5,4 @@ import THEME from "../theme/Theme";
 const Footer = styled.footer`
 	background: ${THEME.colors.black};
 `;
-export default () => <Footer>Footer goes here...</Footer>;
+export default () => <Footer>Footer</Footer>;

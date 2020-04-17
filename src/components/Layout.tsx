@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import styled, { createGlobalStyle } from "styled-components";
 import { Reset } from "styled-reset";
 import THEME from "../theme/Theme";
@@ -31,6 +32,17 @@ const Layout = (props) => {
 	const { children } = props;
 	return (
 		<Page>
+			<Head>
+				<title>Interview</title>
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
+				<meta
+					name="description"
+					content="A PWA to provide questions and quiz to esaly interviewing people"
+				/>
+			</Head>
 			<Reset />
 			<GlobalStyle />
 			<Header />
