@@ -1,31 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { VARS } from "./Constants";
+import THEME from "./Theme";
 
 const Link = styled.a`
 	display: inline-block;
-	padding: calc(${VARS.padding.sm} / 2);
+	padding: calc(${THEME.padding.sm} / 2);
 	font-size: 1.6rem;
-	color: ${VARS.colors.primary};
-	text-transform: uppercase;
-	text-decoration: none;
 	font-weight: 100;
-	transition: color ${VARS.transition.duration.sm};
+	color: ${THEME.colors.primary};
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color ${THEME.transition.duration.sm};
 	&::after {
-		content: "";
+		position: relative;
+		top: 0.5rem;
 		display: block;
 		width: 0;
 		height: 1px;
-		background: ${VARS.colors.primary};
 		margin: 0 auto;
-		position: relative;
-		top: 0.5rem;
-		transition: width ${VARS.transition.duration.xs};
+		content: "";
+		background: ${THEME.colors.primary};
+		transition: width ${THEME.transition.duration.xs};
 	}
 	&:hover {
-		color: ${VARS.colors.secondary};
+		color: ${THEME.colors.secondary};
 		&::after {
-			background-color: ${VARS.colors.secondary};
+			background-color: ${THEME.colors.secondary};
 		}
 	}
 	&:active {
@@ -36,9 +36,9 @@ const Link = styled.a`
 `;
 
 const List = styled.ul`
-	list-style: none;
-	padding: calc(${VARS.padding.sm} / 2);
 	display: inline-flex;
+	padding: calc(${THEME.padding.sm} / 2);
+	list-style: none;
 `;
 
 export default () => {
@@ -46,10 +46,10 @@ export default () => {
 		<nav>
 			<List>
 				<li>
-					<Link href={"/"}>Home</Link>
+					<Link href="/">Home</Link>
 				</li>
 				<li>
-					<Link href={"/about"}>About</Link>
+					<Link href="/about">About</Link>
 				</li>
 			</List>
 		</nav>

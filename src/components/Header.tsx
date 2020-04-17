@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { VARS } from "./Constants";
+import THEME from "./Theme";
 import Menu from "./Menu";
 import Logo from "./Logo";
 
 const Header = styled.header`
-	background: ${VARS.colors.black};
 	display: flex;
 	justify-content: space-between;
+	background: ${THEME.colors.black};
 `;
 
 export default () => {

@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import { VARS } from "./Constants";
+import THEME from "./Theme";
 
 const Logo = styled.a`
 	display: inline-block;
-	padding: ${VARS.padding.sm};
+	padding: ${THEME.padding.sm};
 	font-size: 2rem;
-	color: ${VARS.colors.primary};
-	text-transform: uppercase;
-	text-decoration: none;
 	font-weight: 700;
-	transition: color ${VARS.transition.duration};
+	color: ${THEME.colors.primary};
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color ${THEME.transition.duration};
 	&:hover {
-		color: ${VARS.colors.secondary};
+		color: ${THEME.colors.secondary};
 	}
 `;
 
-export default () => <Logo href={"/"}>Interview</Logo>;
+export default () => <Logo href="/">Interview</Logo>;

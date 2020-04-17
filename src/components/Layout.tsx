@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Reset } from "styled-reset";
-import { VARS } from "./Constants";
+import THEME from "./Theme";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -11,18 +11,19 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 62.5%;
 	}
 	body {
-		font-family: ${VARS.font.family};
+		font-family: ${THEME.font.sansSerif};
 		font-size: 1.4rem;
 		line-height: 1.15;
 	}
 `;
 
 const Page = styled.div`
-	background: ${VARS.colors.greyDarkest};
-	color: ${VARS.colors.greyLight};
 	display: grid;
-	grid-template-rows: min-content 1fr min-content;
 	min-height: 100vh;
+	font-weight: 100;
+	color: ${THEME.colors.greyLight};
+	background: ${THEME.colors.greyDarkest};
+	grid-template-rows: min-content 1fr min-content;
 `;
 
 const Layout = (props) => {

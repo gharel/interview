@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { VARS } from "./Constants";
+import THEME from "./Theme";
 
 const Footer = styled.footer`
-	background: ${VARS.colors.black};
+	background: ${THEME.colors.black};
 `;
 export default () => <Footer>Footer goes here...</Footer>;

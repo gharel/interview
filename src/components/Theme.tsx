@@ -1,7 +1,11 @@
-export const VARS = {
+const THEME = {
 	colors: {
 		primary: "greenyellow",
 		secondary: "yellow",
+		info: "",
+		success: "",
+		warning: "",
+		danger: "",
 		black: "#000",
 		greyDarkest: "#111",
 		greyDarker: "#222",
@@ -19,7 +23,9 @@ export const VARS = {
 		lg: "4rem",
 	},
 	font: {
-		family: "sans-serif",
+		sansSerif: "sans-serif",
+		serif: "sans-serif",
+		monoSpaced: "monospace",
 	},
 	transition: {
 		duration: {
@@ -28,3 +34,5 @@ export const VARS = {
 		},
 	},
 };
+
+export default THEME;
