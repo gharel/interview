@@ -23,9 +23,9 @@ const THEME = {
 		lg: "4rem",
 	},
 	font: {
-		sansSerif: "sans-serif",
-		serif: "sans-serif",
-		monoSpaced: "monospace",
+		body: "sans-serif",
+		heading: "sans-serif",
+		code: "monospace",
 	},
 	transition: {
 		duration: {

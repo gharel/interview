@@ -11,9 +11,10 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 62.5%;
 	}
 	body {
-		font-family: ${THEME.font.sansSerif};
+		font-family: ${THEME.font.body};
 		font-size: 1.4rem;
 		line-height: 1.15;
+		-webkit-font-smoothing: antialiased;
 	}
 `;
 
