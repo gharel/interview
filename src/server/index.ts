@@ -43,9 +43,7 @@ const shouldCompress = (req, res) => {
 			.use(compression({ filter: shouldCompress }));
 
 		// fallback all request to next request handler
-		server.all("*", (req: Request, res: Response) => {
-			return handle(req, res);
-		});
+		server.all("*", (req: Request, res: Response) => handle(req, res));
 
 		// start the HTTP/2 server with express
 		spdy.createServer(options, server).listen(port, (err?: Error) => {

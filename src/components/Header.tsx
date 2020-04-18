@@ -11,11 +11,9 @@ const Header = styled.header`
 	background: ${THEME.colors.black};
 `;
 
-export default () => {
-	return (
-		<Header>
-			<Logo />
-			<Menu />
-		</Header>
-	);
-};
+export default () => (
+	<Header>
+		<Logo />
+		<Menu />
+	</Header>
+);

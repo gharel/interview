@@ -1,12 +1,14 @@
 {
-	"extends": "airbnb-typescript-prettier",
+	"extends": [
+		"airbnb-typescript-prettier"
+	],
 	"plugins": [
 		"simple-import-sort"
 	],
 	"rules": {
 		"simple-import-sort/sort": "error",
-		"sort-imports": "off",
 		"import/order": "off",
+		"sort-imports": "off",
 		"react/jsx-props-no-spreading": 0,
 		"react/state-in-constructor": 0
 	},

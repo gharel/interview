@@ -1,11 +1,9 @@
 import { NextPageContext } from "next";
 import React from "react";
 
-const Error = ({ statusCode }) => {
-	return (
-		<p>{statusCode ? `Server's error ${statusCode}` : "Client's error"}</p>
-	);
-};
+const Error = ({ statusCode }) => (
+	<p>{statusCode ? `Server's error ${statusCode}` : "Client's error"}</p>
+);
 
 Error.getInitialProps = async ({ res, err }: NextPageContext) => {
 	let statusCode = 404;
