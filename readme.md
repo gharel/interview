@@ -5,6 +5,13 @@
 - Next.js
 - Express
 
+## Check or learn
+- Jest https://jestjs.io/ & https://github.com/styled-components/jest-styled-components
+- AMP https://amp.dev/
+- React Admin https://marmelab.com/react-admin/
+- next-i18next for new version with SSR https://github.com/isaachinman/next-i18next/issues/274
+- eslint-plugin-styled-components-a11y https://github.com/brendanmorrell/eslint-plugin-styled-components-a11y/pulls or eslint-plugin-jsx-a11y https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/466
+
 ## Features
 - [ ] Home page
 - [ ] i18n

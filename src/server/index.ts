@@ -3,7 +3,6 @@ import express, { Request, Response } from "express";
 import fs from "fs";
 import next from "next";
 import nexti18nextMiddleware from "next-i18next/middleware";
-import path from "path";
 import spdy from "spdy";
 
 import nexti18next from "./i18n";
@@ -15,8 +14,8 @@ const port = process.env.PORT || 3000;
 
 // create your own certificate with openssl for development
 const options = {
-	key: fs.readFileSync(path.join(__dirname, "/ssl.private.key")),
-	cert: fs.readFileSync(path.join(__dirname, "/ssl.certificate.crt")),
+	key: fs.readFileSync(`${__dirname}/ssl.private.key`),
+	cert: fs.readFileSync(`${__dirname}/ssl.certificate.crt`),
 };
 
 const shouldCompress = (req, res) => {
@@ -25,7 +24,6 @@ const shouldCompress = (req, res) => {
 		return false;
 	}
 
-	// use compression filter function
 	return compression.filter(req, res);
 };
 
