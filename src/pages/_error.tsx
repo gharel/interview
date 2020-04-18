@@ -3,15 +3,11 @@ import { NextPageContext } from "next";
 
 const Error = ({ statusCode }) => {
 	return (
-		<p>
-			{statusCode
-				? `An error ${statusCode} occurred on server`
-				: "An error occurred on client"}
-		</p>
+		<p>{statusCode ? `Server's error ${statusCode}` : "Client's error"}</p>
 	);
 };
 
-Error.getInitialProps = ({ res, err }: NextPageContext) => {
+Error.getInitialProps = async ({ res, err }: NextPageContext) => {
 	let statusCode = 404;
 	if (res) {
 		statusCode = res.statusCode;

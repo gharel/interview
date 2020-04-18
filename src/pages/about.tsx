@@ -1,14 +1,21 @@
 import React from "react";
 import Head from "next/head";
+import { withTranslation } from "../server/i18n";
 import Layout from "../components/Layout";
 
-export default function About() {
+function About({ t }) {
 	return (
 		<Layout>
 			<Head>
-				<title>About | MyCE</title>
+				<title>{t("About")} | MyCE</title>
 			</Head>
-			<main>About</main>
+			<main>{t("About")}</main>
 		</Layout>
 	);
 }
+
+About.getInitialProps = async () => ({
+	namespacesRequired: ["translations"],
+});
+
+export default withTranslation()(About);

@@ -1,10 +1,13 @@
 import express, { Request, Response } from "express";
 import next from "next";
 
+import nexti18nextMiddleware from "next-i18next/middleware";
+
 import compression from "compression";
 import spdy from "spdy";
 import path from "path";
 import fs from "fs";
+import nexti18next from "./i18n";
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -33,16 +36,12 @@ const shouldCompress = (req, res) => {
 		await app.prepare();
 		const server = express();
 
-		// set up compression in express
-		server.use(compression({ filter: shouldCompress }));
+		await nexti18next.initPromise;
 
-		// declaring routes for our pages
-		server.get("/", (req: Request, res: Response) => {
-			return app.render(req, res, "/");
-		});
-		server.get("/about", (req: Request, res: Response) => {
-			return app.render(req, res, "/about");
-		});
+		// set up compression in express
+		server
+			.use(nexti18nextMiddleware(nexti18next))
+			.use(compression({ filter: shouldCompress }));
 
 		// fallback all request to next request handler
 		server.all("*", (req: Request, res: Response) => {

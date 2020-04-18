@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "next/link";
 import { withRouter } from "next/router";
 import styled from "styled-components";
+import { Link } from "../server/i18n";
 import THEME from "../theme/Theme";
 
 const LinkStyled = styled.a`
