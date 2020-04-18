@@ -33,14 +33,14 @@ const Layout = (props) => {
 	return (
 		<Page>
 			<Head>
-				<title>Interview</title>
+				<title>MyCE</title>
 				<meta
 					name="viewport"
 					content="initial-scale=1.0, width=device-width"
 				/>
 				<meta
 					name="description"
-					content="A PWA to provide questions and quiz to esaly interviewing people"
+					content="A PWA to provide offers for CE"
 				/>
 			</Head>
 			<Reset />

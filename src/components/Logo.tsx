@@ -9,11 +9,10 @@ const Logo = styled.a`
 	font-weight: 700;
 	color: ${THEME.colors.primary};
 	text-decoration: none;
-	text-transform: uppercase;
 	transition: color ${THEME.transition.duration};
 	&:hover {
 		color: ${THEME.colors.secondary};
 	}
 `;
 
-export default () => <Logo href="/">Interview</Logo>;
+export default () => <Logo href="/">MyCE</Logo>;

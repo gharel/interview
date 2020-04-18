@@ -6,7 +6,7 @@ export default function About() {
 	return (
 		<Layout>
 			<Head>
-				<title>About | Interview</title>
+				<title>About | MyCE</title>
 			</Head>
 			<main>About</main>
 		</Layout>
