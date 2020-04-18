@@ -1,6 +1,7 @@
-import React from "react";
 import { withRouter } from "next/router";
+import React from "react";
 import styled from "styled-components";
+
 import { Link } from "../server/i18n";
 import THEME from "../theme/Theme";
 

@@ -1,5 +1,5 @@
-import React from "react";
 import { NextPageContext } from "next";
+import React from "react";
 
 const Error = ({ statusCode }) => {
 	return (

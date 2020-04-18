@@ -1,6 +1,7 @@
 import React from "react";
-import { withTranslation } from "../server/i18n";
+
 import Layout from "../components/Layout";
+import { withTranslation } from "../server/i18n";
 
 export const config = { amp: "hybrid" };
 

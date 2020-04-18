@@ -1,7 +1,8 @@
-import React from "react";
 import Head from "next/head";
-import { withTranslation } from "../server/i18n";
+import React from "react";
+
 import Layout from "../components/Layout";
+import { withTranslation } from "../server/i18n";
 
 function About({ t }) {
 	return (

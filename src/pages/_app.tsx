@@ -1,5 +1,6 @@
-import React from "react";
 import App from "next/app";
+import React from "react";
+
 import { appWithTranslation } from "../server/i18n";
 
 class MyApp extends App {

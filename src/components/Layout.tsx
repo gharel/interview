@@ -1,11 +1,11 @@
-import React from "react";
 import Head from "next/head";
+import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Reset } from "styled-reset";
-import THEME from "../theme/Theme";
 
-import Header from "./Header";
+import THEME from "../theme/Theme";
 import Footer from "./Footer";
+import Header from "./Header";
 
 const GlobalStyle = createGlobalStyle`
 	html {

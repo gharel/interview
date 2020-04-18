@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+
 import { i18n, withTranslation } from "../server/i18n";
-import NavLink from "./NavLink";
 import THEME from "../theme/Theme";
+import NavLink from "./NavLink";
 
 const List = styled.ul`
 	display: inline-flex;
