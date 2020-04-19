@@ -4,6 +4,7 @@
 	"description": "PWA for CE",
 	"main": "index.js",
 	"scripts": {
+		"utils:vulnerability": "npm audit & synk test",
 		"utils:check": "npx npm-check --skip-unused",
 		"utils:check:unused": "npx npm-check --special=babel,bin,commitizen,eslint,husky,jest,lint-staged,prettier",
 		"utils:commit": "git cz",
@@ -68,6 +69,7 @@
 		"i18next-parser": "^1.0.2",
 		"lint-staged": "^10.1.5",
 		"prettier": "^2.0.4",
+		"snyk": "^1.305.1",
 		"standard-version": "^7.1.0",
 		"stylelint": "^13.3.2",
 		"stylelint-config-prettier": "^8.0.1",
