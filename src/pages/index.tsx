@@ -8,7 +8,7 @@ export const config = { amp: "hybrid" };
 function Home({ t }) {
 	return (
 		<Layout>
-			<main>{t("translations:Home")}</main>
+			<main>{t("Home")}</main>
 		</Layout>
 	);
 }

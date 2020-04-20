@@ -5,10 +5,17 @@
 - Next.js
 - Express
 
-## Check or learn
-- Jest https://jestjs.io/ & https://github.com/styled-components/jest-styled-components
-- AMP https://amp.dev/
-- React Admin https://marmelab.com/react-admin/
+## ToDo
+- [ ] Check PWA via LightHouse audit
+
+## Learn
+- React https://fr.reactjs.org/docs
+- Redux https://redux.js.org/introduction/getting-started
+- Jest https://jestjs.io/docs/en/getting-started
+- Jest Styled Components https://github.com/styled-components/jest-styled-components
+- AMP https://amp.dev/documentation/
+
+## Check
 - next-i18next for new version with SSR https://github.com/isaachinman/next-i18next/issues/274
 - eslint-plugin-styled-components-a11y https://github.com/brendanmorrell/eslint-plugin-styled-components-a11y/pulls or eslint-plugin-jsx-a11y https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/466
 

@@ -1,18 +1,30 @@
-import { NextPageContext } from "next";
+import { NextPage, NextPageContext } from "next";
 import React from "react";
 
-const Error = ({ statusCode }) => (
-	<p>{statusCode ? `Server's error ${statusCode}` : "Client's error"}</p>
+import Layout from "../components/Layout";
+import { ErrorPage } from "../interfaces/Error.d";
+import { withTranslation } from "../server/i18n";
+
+const Error: NextPage<ErrorPage.Props, ErrorPage.InitialProps> = ({
+	statusCode,
+	t,
+}) => (
+	<Layout>
+		<main>
+			<p>
+				{statusCode
+					? t(`Server's error {{statusCode}}`, {
+							statusCode,
+					  })
+					: t("Client's error")}
+			</p>
+		</main>
+	</Layout>
 );
 
 Error.getInitialProps = async ({ res, err }: NextPageContext) => {
-	let statusCode = 404;
-	if (res) {
-		statusCode = res.statusCode;
-	} else if (err) {
-		statusCode = err.statusCode;
-	}
-	return { statusCode };
+	const statusCode = res ? res.statusCode : err ? err.statusCode : 404; // eslint-disable-line no-nested-ternary
+	return { namespacesRequired: ["translations"], statusCode };
 };
 
-export default Error;
+export default withTranslation()(Error);

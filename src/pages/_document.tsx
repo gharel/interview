@@ -10,10 +10,8 @@ class MyDocument extends Document {
 	}
 
 	render() {
-		console.log(i18n.language);
-
 		return (
-			<Html lang={i18n.language}>
+			<Html lang={i18n.language} dir={i18n.dir()}>
 				<Head />
 				<body>
 					<Main />

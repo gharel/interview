@@ -1,15 +1,22 @@
 import React from "react";
 
 import Layout from "../components/Layout";
+import { withTranslation } from "../server/i18n";
 
 export const config = { amp: "hybrid" };
 
-function Custom404() {
+function Custom404({ t }) {
 	return (
 		<Layout>
-			<main>Error 404 - Page not found</main>
+			<main>
+				<p>{t("Error 404 - Page not found")}</p>
+			</main>
 		</Layout>
 	);
 }
 
-export default Custom404;
+Custom404.getInitialProps = async () => ({
+	namespacesRequired: ["translations"],
+});
+
+export default withTranslation()(Custom404);
