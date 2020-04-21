@@ -6,7 +6,7 @@
 - Express
 
 ## ToDo
-- [ ] Check PWA via LightHouse audit
+- [ ] Check PWA via LightHouse audit (manifest & service worker)
 
 ## Learn
 - React https://fr.reactjs.org/docs

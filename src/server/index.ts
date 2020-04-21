@@ -1,6 +1,7 @@
 import compression from "compression";
 import express, { Request, Response } from "express";
 import fs from "fs";
+import http from "http";
 import next from "next";
 import nexti18nextMiddleware from "next-i18next/middleware";
 import spdy from "spdy";
@@ -10,7 +11,8 @@ import nexti18next from "./i18n";
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const port = process.env.PORT || 3000;
+const port = 80;
+const portSecure = 443;
 
 // create your own certificate with openssl for development
 const options = {
@@ -41,10 +43,23 @@ const shouldCompress = (req, res) => {
 			.use(compression({ filter: shouldCompress }));
 
 		// fallback all request to next request handler
-		server.all("*", (req: Request, res: Response) => handle(req, res));
+		server.all("*", (req: Request, res: Response) => {
+			if (!req.secure) {
+				// request was via http, so redirect to https
+				res.redirect(`https://${req.headers.host}${req.url}`);
+			}
+
+			// request was via https, so do no special handling
+			return handle(req, res);
+		});
+
+		// Handle non secure server
+		http.createServer({}, server).listen(80, (err?: Error) => {
+			if (err) throw err;
+		});
 
 		// start the HTTP/2 server with express
-		spdy.createServer(options, server).listen(port, (err?: Error) => {
+		spdy.createServer(options, server).listen(portSecure, (err?: Error) => {
 			if (err) throw err;
 			const env = process.env.NODE_ENV.trim();
 			// eslint-disable-next-line no-console
