@@ -11,7 +11,7 @@ import nexti18next from "./i18n";
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const port = 80;
+const port = 80; // eslint-disable-line @typescript-eslint/no-unused-vars
 const portSecure = 443;
 
 // create your own certificate with openssl for development
@@ -62,9 +62,11 @@ const shouldCompress = (req, res) => {
 		spdy.createServer(options, server).listen(portSecure, (err?: Error) => {
 			if (err) throw err;
 			const env = process.env.NODE_ENV.trim();
+			const portLog = portSecure !== 443 ? `:${portSecure}` : "";
+
 			// eslint-disable-next-line no-console
 			console.log(
-				`> \x1b[32mReady:\x1b[0m https://localhost:${port} (env: ${env})`
+				`> \x1b[32mReady:\x1b[0m https://localhost${portLog} (env: ${env})`
 			);
 		});
 	} catch (e) {
