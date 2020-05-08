@@ -21,8 +21,9 @@
 
 ## Features
 - [ ] Home page
-- [ ] Dark mode
-- [ ] i18n
+- [X] Dark mode
+- [X] i18n
+- [X] Icons
 - [ ] Listing offers
 - [ ] Detail offers
 - [ ] Search, filter and categorize (by providers) offers
