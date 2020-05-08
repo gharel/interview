@@ -1,23 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 
+import { i18n } from "../server/i18n";
+
 const LinkStyled = styled.a`
-	display: inline-block;
 	padding: ${(props) => props.theme.padding.sm};
-	font-size: 2rem;
-	font-weight: 700;
+	font-size: 1.6rem;
 	color: ${(props) => props.theme.colors.primary};
-	text-decoration: none;
-	transition: color ${(props) => props.theme.transition.duration};
+	text-transform: uppercase;
+	cursor: pointer;
 	&:hover {
 		color: ${(props) => props.theme.colors.secondary};
 	}
 `;
 
-export default () => {
+const ToggleLang = () => {
 	return (
-		<LinkStyled href="/">
-			<span>MyCE</span>
+		<LinkStyled
+			onClick={() =>
+				i18n.changeLanguage(i18n.language === "fr" ? "en" : "fr")
+			}
+		>
+			{i18n.language}
 		</LinkStyled>
 	);
 };
+
+export default ToggleLang;

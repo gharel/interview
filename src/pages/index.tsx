@@ -5,13 +5,13 @@ import { withTranslation } from "../server/i18n";
 
 export const config = { amp: "hybrid" };
 
-function Home({ t }) {
+const Home = ({ t }) => {
 	return (
 		<Layout>
-			<main>{t("Home")}</main>
+			<div>{t("Home")}</div>
 		</Layout>
 	);
-}
+};
 
 Home.getInitialProps = async () => ({
 	namespacesRequired: ["translations"],

@@ -1,9 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-import THEME from "../theme/Theme";
-
-const Footer = styled.footer`
-	background: ${THEME.colors.black};
+const FooterStyled = styled.footer`
+	color: ${(props) => props.theme.colors.footer.fg};
+	background: ${(props) => props.theme.colors.footer.bg};
 `;
-export default () => <Footer>Footer</Footer>;
+
+const DivStyled = styled.div`
+	padding: ${(props) => props.theme.padding.sm};
+`;
+
+export default () => {
+	return (
+		<FooterStyled>
+			<DivStyled>Footer</DivStyled>
+		</FooterStyled>
+	);
+};

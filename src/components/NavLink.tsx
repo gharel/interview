@@ -3,17 +3,16 @@ import React from "react";
 import styled from "styled-components";
 
 import { Link } from "../server/i18n";
-import THEME from "../theme/Theme";
 
 const LinkStyled = styled.a`
 	display: inline-block;
-	padding: calc(${THEME.padding.sm} / 2);
+	padding: calc(${(props) => props.theme.padding.sm} / 2);
 	font-size: 1.6rem;
 	font-weight: 100;
-	color: ${THEME.colors.primary};
+	color: ${(props) => props.theme.colors.primary};
 	text-decoration: none;
 	text-transform: uppercase;
-	transition: color ${THEME.transition.duration.sm};
+	transition: color ${(props) => props.theme.transition.duration.sm};
 	&::after {
 		position: relative;
 		top: 0.5rem;
@@ -22,13 +21,13 @@ const LinkStyled = styled.a`
 		height: 1px;
 		margin: 0 auto;
 		content: "";
-		background: ${THEME.colors.primary};
-		transition: width ${THEME.transition.duration.xs};
+		background: ${(props) => props.theme.colors.primary};
+		transition: width ${(props) => props.theme.transition.duration.xs};
 	}
 	&:hover {
-		color: ${THEME.colors.secondary};
+		color: ${(props) => props.theme.colors.secondary};
 		&::after {
-			background-color: ${THEME.colors.secondary};
+			background-color: ${(props) => props.theme.colors.secondary};
 		}
 	}
 	&:active,

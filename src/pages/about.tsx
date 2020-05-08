@@ -4,16 +4,16 @@ import React from "react";
 import Layout from "../components/Layout";
 import { withTranslation } from "../server/i18n";
 
-function About({ t }) {
+const About = ({ t }) => {
 	return (
 		<Layout>
 			<Head>
 				<title>{t("About")} | MyCE</title>
 			</Head>
-			<main>{t("About")}</main>
+			<div>{t("About")}</div>
 		</Layout>
 	);
-}
+};
 
 About.getInitialProps = async () => ({
 	namespacesRequired: ["translations"],

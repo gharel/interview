@@ -1,37 +1,27 @@
 import Head from "next/head";
 import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { Reset } from "styled-reset";
 
-import THEME from "../theme/Theme";
 import Footer from "./Footer";
+import GlobalStyle from "./GlobalStyle";
 import Header from "./Header";
+import Main from "./Main";
 
-const GlobalStyle = createGlobalStyle`
-	html {
-		font-size: 62.5%;
-	}
-	body {
-		font-family: ${THEME.font.body};
-		font-size: 1.4rem;
-		line-height: 1.15;
-		-webkit-font-smoothing: antialiased;
-	}
-`;
-
-const Page = styled.div`
+const DivStyled = styled.div`
 	display: grid;
 	min-height: 100vh;
 	font-weight: 100;
-	color: ${THEME.colors.greyLight};
-	background: ${THEME.colors.greyDarkest};
+	color: ${(props) => props.theme.colors.body.fg};
+	background: ${(props) => props.theme.colors.body.bg};
 	grid-template-rows: min-content 1fr min-content;
 `;
 
 const Layout = (props) => {
 	const { children } = props;
+
 	return (
-		<Page>
+		<>
 			<Head>
 				<title>MyCE</title>
 				<meta
@@ -45,10 +35,12 @@ const Layout = (props) => {
 			</Head>
 			<Reset />
 			<GlobalStyle />
-			<Header />
-			{children}
-			<Footer />
-		</Page>
+			<DivStyled>
+				<Header />
+				<Main>{children}</Main>
+				<Footer />
+			</DivStyled>
+		</>
 	);
 };
 

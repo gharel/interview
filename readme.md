@@ -16,11 +16,12 @@
 - AMP https://amp.dev/documentation/
 
 ## Check
-- next-i18next for new version with SSR https://github.com/isaachinman/next-i18next/issues/274
+- next-i18next for new version with SSR https://github.com/isaachinman/next-i18next/issues/274 or next for new version with i18n support https://github.com/tutorbookapp/covid-tutoring/issues/35
 - eslint-plugin-styled-components-a11y https://github.com/brendanmorrell/eslint-plugin-styled-components-a11y/pulls or eslint-plugin-jsx-a11y https://github.com/evcohen/eslint-plugin-jsx-a11y/issues/466
 
 ## Features
 - [ ] Home page
+- [ ] Dark mode
 - [ ] i18n
 - [ ] Listing offers
 - [ ] Detail offers

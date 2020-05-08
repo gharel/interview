@@ -6,7 +6,6 @@ const NextI18NextInstance = new NextI18Next({
 	// debug: true,
 	defaultNS: "translations",
 	localePath: "public/locales",
-	lng: "fr",
 	defaultLanguage: "fr",
 	otherLanguages: ["en"],
 	localeSubpaths: {

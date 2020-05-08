@@ -1,19 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-import THEME from "../theme/Theme";
 import Logo from "./Logo";
 import Menu from "./Menu";
 
-const Header = styled.header`
+const HeaderStyled = styled.header`
 	display: flex;
 	justify-content: space-between;
-	background: ${THEME.colors.black};
+	color: ${(props) => props.theme.colors.header.fg};
+	background: ${(props) => props.theme.colors.header.bg};
 `;
 
-export default () => (
-	<Header>
-		<Logo />
-		<Menu />
-	</Header>
-);
+export default () => {
+	return (
+		<HeaderStyled>
+			<Logo />
+			<Menu />
+		</HeaderStyled>
+	);
+};
