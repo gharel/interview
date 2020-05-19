@@ -3,9 +3,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import { withTranslation } from "../server/i18n";
 
-export const config = { amp: "hybrid" };
-
-function Custom404({ t }) {
+const Custom404 = ({ t }) => {
 	return (
 		<Layout>
 			<main>
@@ -13,7 +11,7 @@ function Custom404({ t }) {
 			</main>
 		</Layout>
 	);
-}
+};
 
 Custom404.getInitialProps = async () => ({
 	namespacesRequired: ["translations"],

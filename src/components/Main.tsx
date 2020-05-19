@@ -5,9 +5,7 @@ const MainStyled = styled.div`
 	padding: ${(props) => props.theme.padding.sm};
 `;
 
-const Main = (props) => {
-	const { children } = props;
-
+const Main = ({ children }) => {
 	return <MainStyled>{children}</MainStyled>;
 };
 

@@ -10,10 +10,12 @@ const DivStyled = styled.div`
 	padding: ${(props) => props.theme.padding.sm};
 `;
 
-export default () => {
+const Footer = () => {
 	return (
 		<FooterStyled>
 			<DivStyled>Footer</DivStyled>
 		</FooterStyled>
 	);
 };
+
+export default Footer;

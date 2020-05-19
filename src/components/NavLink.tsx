@@ -38,8 +38,7 @@ const LinkStyled = styled.a`
 	}
 `;
 
-const NavLink = (props) => {
-	const { href, children, router } = props;
+const NavLink = ({ href, children, router }) => {
 	return (
 		<li>
 			<Link href={href} passHref>
@@ -54,4 +53,5 @@ const NavLink = (props) => {
 		</li>
 	);
 };
+
 export default withRouter(NavLink);

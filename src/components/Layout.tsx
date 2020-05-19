@@ -17,9 +17,7 @@ const DivStyled = styled.div`
 	grid-template-rows: min-content 1fr min-content;
 `;
 
-const Layout = (props) => {
-	const { children } = props;
-
+const Layout = ({ children }) => {
 	return (
 		<>
 			<Head>

@@ -14,10 +14,12 @@ const LinkStyled = styled.a`
 	}
 `;
 
-export default () => {
+const Logo = () => {
 	return (
 		<LinkStyled href="/">
 			<span>MyCE</span>
 		</LinkStyled>
 	);
 };
+
+export default Logo;
