@@ -1,6 +1,7 @@
 {
 	"extends": [
-		"airbnb-typescript-prettier"
+		"airbnb-typescript-prettier",
+		"plugin:react-hooks/recommended"
 	],
 	"plugins": [
 		"simple-import-sort"
